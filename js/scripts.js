@@ -25,3 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(slidePartners, 5000);
 });
 
+/* Phần hướng dẫn sử dụng */
+
+
