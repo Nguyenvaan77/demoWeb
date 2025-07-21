@@ -540,3 +540,107 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* banner space */
+
+/* MemCab Banner Styles */
+.memcab-banner {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("/img/memcab/background.png");
+  background-size: cover; /* Scales the image to cover the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  position: relative;
+}
+
+.memcab-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* Optional dark overlay for text contrast */
+  z-index: 0;
+}
+
+.banner-content, .banner-image {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content {
+  max-width: 600px;
+  color: rgb(0, 0, 0);
+}
+
+.banner-content h2 {
+  color: #0ba558;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.banner-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.banner-content p strong {
+  color: #14b866;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #14b866;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0e9e5a;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .memcab-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+  }
+
+  .banner-image {
+    margin-top: 20px;
+  }
+}

@@ -24,3 +24,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(slidePartners, 5000);
 });
+
