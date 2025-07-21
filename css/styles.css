@@ -444,7 +444,7 @@ footer {
 .feature-card {
   background: #fff;
   border-radius: 16px;
-  padding: 24px;
+  padding: 32px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
@@ -455,13 +455,14 @@ footer {
 
 .feature-card img {
   width: 100%;
-  height: auto;
+  max-height: 320px;
+  object-fit: contain;
   border-radius: 10px;
-  object-fit: cover;
+  margin-top: 16px;
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 15px;
   font-weight: 600;
   color: #333;
@@ -471,6 +472,7 @@ footer {
   font-size: 1rem;
   color: #666;
   margin-top: 10px;
+  line-height: 1.5;
 }
 
 .features-section {
@@ -490,7 +492,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 32px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -498,7 +500,7 @@ footer {
 .feature-card {
   background: white;
   border-radius: 16px;
-  padding: 24px;
+  padding: 32px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
 }
@@ -508,20 +510,20 @@ footer {
 }
 
 .feature-icon {
-  font-size: 36px;
-  margin-bottom: 12px;
+  font-size: 48px;
+  margin-bottom: 16px;
 }
 
 .feature-card h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1.4;
 }
 
 .feature-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 16px;
   line-height: 1.5;
@@ -529,7 +531,7 @@ footer {
 
 .feature-card img {
   width: 100%;
-  max-height: 280px;
+  max-height: 320px;
   object-fit: contain;
   border-radius: 10px;
   margin-top: 16px;
@@ -539,4 +541,193 @@ footer {
   .features-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* MemCab Banner Styles */
+.memcab-banner {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("/img/memcab/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.memcab-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+
+.banner-content, .banner-image {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content {
+  max-width: 600px;
+  color: rgb(0, 0, 0);
+}
+
+.banner-content h2 {
+  color: #0ba558;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.banner-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.banner-content p strong {
+  color: #14b866;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #14b866;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0e9e5a;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .memcab-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+  }
+
+  .banner-image {
+    margin-top: 20px;
+  }
+}
+
+/* Styles for "CÁCH SỬ DỤNG CỰC ĐƠN GIẢN" section */
+.how-to-use-section {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: auto;
+  background-color: #f0fff0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.how-to-use-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 1200px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 320px);
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 280px);
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 240px);
+  }
+  .feature-card {
+    padding: 24px;
+  }
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+  .feature-card img {
+    max-height: 280px;
+  }
+}
+
+.how-to-use-section .feature-card {
+  padding: 10px 10px 16px;
+}
+
+.how-to-use-section .feature-card h3 {
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.how-to-use-section .feature-card p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.how-to-use-section .feature-card img {
+  margin-top: 6px;
+  margin-bottom: 1px;
+  max-height: 360px; /* tăng từ 240px lên gấp rưỡi */
+  width: 300px;
+  object-fit: contain;
+  border-radius: 10px;
 }
